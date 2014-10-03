@@ -11,7 +11,7 @@ Fetch the repository from docker
 
 Create a new container using the image
 
-    docker run -d -P 8000 openlabs/tryton
+    docker run -d -p 8000 openlabs/tryton
 
 * The `-d` option indicates that the container should be run in daemon
   mode.
@@ -29,6 +29,20 @@ To find the port that tryton in now bound to
 The output in the PORTS column should look like `0.0.0.0:49153->8000/tcp`.
 You should now be able to connect to tryton on the port 49153. (Note:
 Substitute the port number with what is displayed on your docker host.)
+
+To install the Tryton client in your machine, you can use virtualenv/virtualenvwrapper and pip:
+```
+sudo apt-get install virtualenvwrapper python-gtk2
+mkvirtualenv --with-site-packages tryton
+workon tryton
+pip install tryton-client
+```
+
+To run it just call tryton from inside the virtualenv:
+```
+workon tryton
+tryton
+```
 
 **SSH into the container (Deprecated)**
 
