@@ -5,7 +5,7 @@
 FROM openlabs/tryton:3.2
 MAINTAINER Nicolás Pace <nicolas.pace@unixono.com.ar>
 
-RUN apt-get install swig  # pyafipws dependency
+RUN apt-get install -y swig  # pyafipws dependency
 
 # Setup the modules required for this setup
 RUN pip install 'trytond_sale>=3.2,<3.3'
